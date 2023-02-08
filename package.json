@@ -1,0 +1,28 @@
+{
+  "name": "my-daily-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phadeline/My-Daily-Blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phadeline/My-Daily-Blog/issues"
+  },
+  "homepage": "https://github.com/phadeline/My-Daily-Blog#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "bcrypt": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "express-handlebars": "^5.2.0",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5"
+  }
+}
