@@ -19,16 +19,10 @@ user.init(
     username: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        isAlphanumeric: true,
-      },
     },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        isAlphanumeric: true,
-      },
     },
   },
   {
