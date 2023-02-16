@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const { user } = require("../../models");
+const { User } = require("../../models");
 
 router.post("/login", async (req, res) => {
   try {
-    const userData = await user.findOne({ where: { email: req.body.email } });
+    const userData = await User.findOne({ where: { username: req.body.username } });
 
     if (!userData) {
       res
@@ -12,7 +12,7 @@ router.post("/login", async (req, res) => {
       return;
     }
 
-    const validPassword = await userData.checkPassword(req.body.password);
+    const validPassword = userData.checkPassword(req.body.password);
 
     if (!validPassword) {
       res
@@ -34,9 +34,8 @@ router.post("/login", async (req, res) => {
 
 router.post("/", async (req, res) => {
   try {
-    const dbUserData = await user.create({
+    const dbUserData = await User.create({
       username: req.body.username,
-
       password: req.body.password,
     });
 
