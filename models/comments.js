@@ -13,8 +13,11 @@ Comments.init(
     },
 
     post_id: {
-      type: DataTypes.NUMBER,
-      allowNull: false,
+      type: DataTypes.INTEGER,
+      references: {
+        model: "posts",
+        key: "id",
+      },
     },
     comment: {
       type: DataTypes.STRING,
@@ -34,6 +37,5 @@ Comments.init(
     modelName: "comments",
   }
 );
-
 
 module.exports = Comments;

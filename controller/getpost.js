@@ -22,6 +22,7 @@ router.get("/:id", withAuth, async (req, res) => {
     const posts = postData.get({ plain: true });
     res.render("onePost", {
       posts,
+      username: req.session.username,
     //   comments,
     });
   } catch (err) {
