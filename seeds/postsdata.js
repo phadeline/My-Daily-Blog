@@ -1,4 +1,4 @@
-const {posts} = require('../models')
+const {Post} = require('../models')
 
 const postsData = [
     {
@@ -17,6 +17,6 @@ const postsData = [
 
 
 
-const seedposts = () => posts.bulkCreate(postsData);
+const seedposts = () => Post.bulkCreate(postsData);
 
 module.exports = seedposts;
