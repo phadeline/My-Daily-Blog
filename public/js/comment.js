@@ -4,6 +4,8 @@ const locationLength = locationSplit.length;
 const locationId = locationSplit[locationLength - 1];
 console.log(locationId);
 
+
+//show input box to add commment 
 function showaddcomment(event) {
   event.preventDefault();
   let showInputs = document.querySelector("#add-comment-form");
@@ -38,20 +40,6 @@ const newCommentFormHandler = async (event) => {
 };
 
 
-//This is to delete a post
-
-
-
-//This is to update a post
-const updatePost = async (event) => {
-  event.preventDefault();
-
-  await fetch("/")
-}
-
-
-
-document.querySelector('#update').addEventListener('click', updatePost)
 
 document
   .querySelector("#add-comment-form")
