@@ -4,14 +4,35 @@
   <h4>Posted By: {{posts.user.username}}</h4>
   <h4>Date of Post: {{format_date posts.date}}</h4>
 </div>
+<div>
+  <div>
+    <button id="update">Update Post</button>
+  </div>
+  <div>
+    <button id="delete">Delete Post</button>
+  </div>
+</div>
 
-<button>Add A Comment</button>
-
+<button id="comment">Add A Comment</button>
+<div>
+  <form id="add-comment-form">
+    <label id="comment-label">Comment:</label><br />
+    <input
+      type="text"
+      id="mycomment"
+      placeholder="Write your comment here..."
+      class="form-comment-input"
+    />
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<h2>Your Comments</h2>
 {{#each comments as |aComment|}}
   <div>
-    <h2>Your Comments</h2>
     <h4>{{aComment.comment}}</h4>
     <h4>{{aComment.user.username}}</h4>
     <h5>{{format_date aComment.comment_date}}</h5>
   </div>
 {{/each}}
+
+<script src="/js/comment.js"></script>

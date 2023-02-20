@@ -27,6 +27,8 @@ router.get("/:id", withAuth, async (req, res) => {
 
     res.render("onePost", {
       posts,
+      username: req.session.user,
+      userId: req.session.user_id,
       comments,
     });
   } catch (err) {

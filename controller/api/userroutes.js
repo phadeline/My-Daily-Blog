@@ -3,7 +3,9 @@ const { User } = require("../../models");
 
 router.post("/login", async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { username: req.body.username } });
+    const userData = await User.findOne({
+      where: { username: req.body.username },
+    });
 
     if (!userData) {
       res
@@ -24,6 +26,7 @@ router.post("/login", async (req, res) => {
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
+      req.session.user = userData.username;
 
       res.json({ user: userData, message: "You are now logged in!" });
     });
@@ -41,7 +44,7 @@ router.post("/", async (req, res) => {
 
     req.session.save(() => {
       req.session.userId = dbUserData.id;
-      req.session.username = dbUserData.username;
+      req.session.user = dbUserData.username;
       req.session.logged_in = true;
 
       res.status(200).json(dbUserData);
