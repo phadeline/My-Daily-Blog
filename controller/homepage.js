@@ -21,6 +21,21 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
+router.get("/dashboard", withAuth, async (req, res) => {
+  try {
+    const allposts = await Post.findAll();
+    const myposts = allposts.map((post) => post.get({ plain: true }));
+    console.log(myposts);
+
+    res.render("dashboard", {
+      myposts,
+      loggedIn: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
     res.redirect("/");

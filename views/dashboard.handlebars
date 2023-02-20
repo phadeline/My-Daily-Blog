@@ -1,0 +1,25 @@
+<section>
+  <div>
+    <button id="createPost">Write a Post</button>
+  </div>
+  <div>
+    <form id="add-post-form">
+      <label id="post-title">Title:</label><br />
+      <input type="text" id="mytitle" placeholder="Write your title here..." />
+      <label id="post-content">Your Post:</label><br />
+      <input type="text" id="mypost" placeholder="Write your post here..." />
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</section>
+
+{{#each myposts as |post|}}
+  <div>
+    <h3 id="posttitle">{{post.title}}</h3>
+    <h3 id="postcontent">{{post.content}}</h3>
+    <h4 id="content">{{format_date post.date}}</h4>
+    <a href="/post/{{post.id}}"><h2>View Post</h2></a>
+  </div>
+{{/each}}
+
+<script src="/js/createPost.js"></script>
