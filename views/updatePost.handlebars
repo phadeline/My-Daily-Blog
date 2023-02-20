@@ -1,0 +1,24 @@
+<div>
+  <h2>Current Post</h2>
+  <h3>Title: {{post.title}}</h3>
+  <h3>Content: {{post.content}}</h3>
+  <h4>Posted By: {{post.user.username}}</h4>
+  <h4>Date of Post: {{format_date post.date}}</h4>
+</div>
+
+<div>
+  <h2>
+    Updated Post
+  </h2>
+  <div>
+    <form>
+      <label id="title-label">Updated Title:</label><br />
+      <input type="text" id="newTitle" placeholder="Write your title here..." />
+      <label id="post-label">Updated Post:</label><br />
+      <input type="text" id="newPost" placeholder="Write your post here..." />
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+
+{{! need javascript file for new post, need api cnotroller for new post }}

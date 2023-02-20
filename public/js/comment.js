@@ -12,6 +12,7 @@ function showaddcomment(event) {
   showInputs.style.display = "block";
 }
 
+//This is to add a new comment
 const newCommentFormHandler = async (event) => {
   event.preventDefault();
   console.log("new comment submitted");
@@ -35,6 +36,22 @@ const newCommentFormHandler = async (event) => {
   });
   document.location.replace("/post/" + locationId);
 };
+
+
+//This is to delete a post
+
+
+
+//This is to update a post
+const updatePost = async (event) => {
+  event.preventDefault();
+
+  await fetch("/")
+}
+
+
+
+document.querySelector('#update').addEventListener('click', updatePost)
 
 document
   .querySelector("#add-comment-form")
