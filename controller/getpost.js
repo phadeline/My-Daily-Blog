@@ -13,10 +13,14 @@ router.get("/:id", withAuth, async (req, res) => {
     const commentsData = await Comments.findAll({
       where: { post_id: req.params.id },
       include: [{ model: User }],
+    }).catch((err) => {
+      res.json(err);
+      return;
     });
 
     if (!postData) {
       res.status(404).json({ message: "no post found with this id!" });
+      return;
     }
 
     const comments = commentsData.map((comment) =>
@@ -34,6 +38,7 @@ router.get("/:id", withAuth, async (req, res) => {
     });
   } catch (err) {
     res.status(500).json(err);
+    return;
   }
 });
 

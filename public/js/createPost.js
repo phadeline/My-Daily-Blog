@@ -7,7 +7,6 @@ function createPostForm(event) {
 }
 
 const newPostFormHandler = async (event) => {
-  event.preventDefault();
   const title = document.querySelector("#mytitle").value;
   const content = document.querySelector("#mypost").value;
 
@@ -30,7 +29,8 @@ const newPostFormHandler = async (event) => {
     },
   });
 
-  document.location.replace("/dashboard");
+  document.location.replace("/");
+  event.preventDefault();
 };
 
 document

@@ -43,7 +43,7 @@ const deletePost = async (event) => {
   await fetch(`/api/post/${locationId}`, {
     method: "DELETE",
   });
-  document.location.replace("/");
+  document.location.replace(`/`);
 };
 
 document.querySelector("#delete").addEventListener("click", deletePost);
