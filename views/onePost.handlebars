@@ -1,21 +1,22 @@
-<div>
-  <h3>Title: {{posts.title}}</h3>
-  <h3>Content: {{posts.content}}</h3>
-  <h4>Posted By: {{posts.user.username}}</h4>
-  <h4>Date of Post: {{format_date posts.date}}</h4>
+<div class="onePost">
+  <h3 style="color: brown;">Title: <br />{{posts.title}}</h3>
+  <h3 style="color: rgb(192, 89, 89);">Content: <br />{{posts.content}}</h3>
+  <h4 style="font-size: 15px;">Posted By: {{posts.user.username}}</h4>
+  <h4 style="font-size: 15px;">Date of Post: {{format_date posts.date}}</h4>
 </div>
-<div>
+<div class="delete-update">
   <div>
     <a href="/post/update/{{posts.id}}"><button id="update">Update Post</button></a>
   </div>
   <div>
     {{!-- <a href="/post/delete/{{posts.id}}"<button id="delete">Delete Post</button></a> --}}
-      <button id="delete">Delete Post</button>
+    <button id="delete">Delete Post</button>
 
   </div>
 </div>
-
-<button id="comment">Add A Comment</button>
+<div id="commentDiv">
+  <button id="comment">Add A Comment</button>
+</div>
 <div>
   <form id="add-comment-form">
     <label id="comment-label">Comment:</label><br />
@@ -24,17 +25,21 @@
       id="mycomment"
       placeholder="Write your comment here..."
       class="form-comment-input"
-    />
+    /><br />
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
-<h2>Your Comments</h2>
-{{#each comments as |aComment|}}
-  <div>
-    <h4>{{aComment.comment}}</h4>
-    <h4>{{aComment.user.username}}</h4>
-    <h5>{{format_date aComment.comment_date}}</h5>
-  </div>
-{{/each}}
+
+<section id="allComments">
+  <h2>Your Comments</h2>
+
+  {{#each comments as |aComment|}}
+    <div id="eachComment" class="col-lg-3 col-sm-6">
+      <h4>{{aComment.comment}}</h4>
+      <h4>{{aComment.user.username}}</h4>
+      <h5>{{format_date aComment.comment_date}}</h5>
+    </div>
+  {{/each}}
+</section>
 
 <script src="/js/comment.js"></script>

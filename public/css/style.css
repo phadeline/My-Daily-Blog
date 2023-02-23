@@ -1,7 +1,142 @@
 #add-comment-form {
-    display: none;
-  }
+  display: none;
+}
 
-  #add-post-form {
-    display: none;
-  }
+#add-post-form {
+  display: none;
+}
+body {
+  height: 100% !important;
+  width: 100% !important;
+  background-color: rgb(241, 241, 247);
+}
+
+.loginForms {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  border-style: double;
+}
+
+.login-card {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  border-style: double;
+}
+
+.bothForms {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.allPosts {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: space-around;
+  flex-wrap: wrap;
+}
+
+.posts {
+  background-color: rgb(199, 255, 255);
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-style: groove;
+  box-shadow: 10px 10px 5px gray;
+  border-radius: 40%;
+}
+
+.Post-so-Far {
+  font-size: 40px;
+  color: cadetblue;
+}
+
+header {
+  font-size: 70px;
+  color: cadetblue;
+  background-color: azure;
+}
+
+.navbar {
+  background-color: white;
+  margin-bottom: 20px;
+  border-style: solid;
+}
+
+.nav-link {
+  color: blue;
+}
+
+.viewPost {
+  text-decoration: none;
+  color: green;
+}
+
+.onePost {
+  text-align: center;
+}
+
+.delete-update {
+  display: flex;
+  font-size: 30px;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+#update {
+  background-color: aquamarine;
+  border-radius: 30px;
+}
+
+#delete {
+  background-color: red;
+  border-radius: 30px;
+}
+
+#commentDiv {
+  text-align: center;
+}
+
+#comment {
+  text-align: center;
+  background-color: green;
+  font-size: 30px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+#add-comment-form {
+  text-align: center;
+}
+
+#mycomment {
+  width: 30%;
+  height: 30%;
+}
+
+#eachComment {
+  background-color: rgb(199, 255, 255);
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-style: groove;
+  box-shadow: 10px 10px 5px gray;
+}
+
+#allComments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#allComments h2 {
+  width: fit-content;
+  background-color: white;
+  margin-top: 30px;
+}

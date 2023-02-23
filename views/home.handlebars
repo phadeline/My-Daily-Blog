@@ -1,12 +1,13 @@
+<h2 class="text-center Post-so-Far">Go to the Dashboard to Write a Post!</h2><br
+/>
+<section class="allPosts">
 
-<section>
   {{#each myposts as |post|}}
-    <div>
-      <h3 id="posttitle">{{post.title}}</h3>
-      <h4 id="content">{{format_date post.date}}</h4>
-      <a href="/post/{{post.id}}"><h2>View Post</h2></a>
+    <div class="col-lg-3 col-sm-6 posts">
+      <h3 id="posttitle">Title: {{post.title}}</h3>
+      <h4 id="content">Posted On: {{format_date post.date}}</h4>
+      <a href="/post/{{post.id}}" class="viewPost" style="font-size: 20px;"><h2
+        >View Post</h2></a>
     </div>
   {{/each}}
-
-  
-
+</section>
