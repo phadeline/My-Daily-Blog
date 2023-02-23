@@ -1,11 +1,13 @@
 const withAuth = require("../utils/auth");
 
 const router = require("express").Router();
-const { Post, Comments } = require("../models");
+const { Post, Comments, User } = require("../models");
 
 router.get("/", withAuth, async (req, res) => {
   try {
-    const allposts = await Post.findAll();
+    const allposts = await Post.findAll({
+      include: [User],
+    });
     const myposts = allposts.map((post) => post.get({ plain: true }));
     console.log(myposts);
 
@@ -20,7 +22,6 @@ router.get("/", withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {

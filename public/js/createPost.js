@@ -1,11 +1,3 @@
-function createPostForm(event) {
-  event.preventDefault();
-  let showInputs = document.querySelector("#add-post-form");
-  let postbutton = document.querySelector("#createPost");
-  postbutton.style.display = "none";
-  showInputs.style.display = "block";
-}
-
 const newPostFormHandler = async (event) => {
   const title = document.querySelector("#mytitle").value;
   const content = document.querySelector("#mypost").value;
@@ -36,5 +28,3 @@ const newPostFormHandler = async (event) => {
 document
   .querySelector("#add-post-form")
   .addEventListener("submit", newPostFormHandler);
-
-document.querySelector("#createPost").addEventListener("click", createPostForm);

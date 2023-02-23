@@ -5,7 +5,9 @@ const { Post, Comments } = require("../models");
 
 router.get("/", withAuth, async (req, res) => {
   try {
-    const allposts = await Post.findAll();
+    const allposts = await Post.findAll({
+      where: { user_id: req.session.user_id },
+    });
     const myposts = allposts.map((post) => post.get({ plain: true }));
     console.log(myposts);
 

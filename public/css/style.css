@@ -2,9 +2,9 @@
   display: none;
 }
 
-#add-post-form {
+/* #add-post-form {
   display: none;
-}
+} */
 body {
   height: 100% !important;
   width: 100% !important;
@@ -48,12 +48,26 @@ body {
   align-items: center;
   border-style: groove;
   box-shadow: 10px 10px 5px gray;
-  border-radius: 40%;
+  border-radius: 10%;
 }
 
 .Post-so-Far {
   font-size: 40px;
   color: cadetblue;
+  background-color: rgb(211, 243, 211);
+  width: fit-content;
+  margin: auto;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.Post-so-Far:hover {
+  background-color: green;
+  color: black;
+}
+
+#Post-so-Far {
+  text-decoration: none;
 }
 
 header {
@@ -139,4 +153,97 @@ header {
   width: fit-content;
   background-color: white;
   margin-top: 30px;
+}
+
+#add-post-form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+}
+
+#post-title {
+  font-size: 30px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+#post-content {
+  font-size: 30px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  margin-top: 20px;
+}
+
+#mytitle {
+  margin: 0;
+  padding: 15px;
+}
+
+.addForms {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+}
+
+#mypost {
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.postSubmit,
+.updateSubmit {
+  width: fit-content;
+  margin: auto;
+}
+
+#pastPosts {
+  text-align: center;
+  margin: 20 0px;
+}
+
+.currentPost,
+.updated-Post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.currentPost {
+  background-color: rgb(251, 234, 236);
+  width: 80%;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 30px;
+  border-style: groove;
+}
+
+#update-post-form {
+  margin: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+#newTitle {
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+#newPost {
+  padding: 20px;
+}
+
+.updated-Post {
+  background-color: rgb(251, 234, 236);
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  border-radius: 30px;
+  border-style: groove;
+}
+
+.updated-Post:hover {
+  background-color: rgb(249, 151, 162);
 }

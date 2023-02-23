@@ -4,16 +4,19 @@
   <h4 style="font-size: 15px;">Posted By: {{posts.user.username}}</h4>
   <h4 style="font-size: 15px;">Date of Post: {{format_date posts.date}}</h4>
 </div>
-<div class="delete-update">
-  <div>
-    <a href="/post/update/{{posts.id}}"><button id="update">Update Post</button></a>
-  </div>
-  <div>
-    {{!-- <a href="/post/delete/{{posts.id}}"<button id="delete">Delete Post</button></a> --}}
-    <button id="delete">Delete Post</button>
 
+{{#if Match}}
+  <div class="delete-update">
+    <div>
+      <a href="/post/update/{{posts.id}}"><button id="update">Update Post</button></a>
+    </div>
+    <div>
+      {{!-- <a href="/post/delete/{{posts.id}}"<button id="delete">Delete Post</button></a> --}}
+      <button id="delete">Delete Post</button>
+
+    </div>
   </div>
-</div>
+{{/if}}
 <div id="commentDiv">
   <button id="comment">Add A Comment</button>
 </div>

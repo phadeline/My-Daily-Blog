@@ -1,25 +1,28 @@
 <section>
-  <div>
+  {{! <div>
     <button id="createPost">Write a Post</button>
-  </div>
-  <div>
+  </div> }}
+  <div class="addForms">
     <form id="add-post-form">
-      <label id="post-title">Title:</label><br />
+      <label id="post-title" class="text-start">Title:</label><br />
       <input type="text" id="mytitle" placeholder="Write your title here..." />
-      <label id="post-content">Your Post:</label><br />
+      <label id="post-content" class="text-start">Your Post:</label><br />
       <input type="text" id="mypost" placeholder="Write your post here..." />
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn postSubmit btn-primary">Submit</button>
     </form>
   </div>
 </section>
 
-{{#each myposts as |post|}}
-  <div>
-    <h3 id="posttitle">{{post.title}}</h3>
-    <h3 id="postcontent">{{post.content}}</h3>
-    <h4 id="content">{{format_date post.date}}</h4>
-    <a href="/post/{{post.id}}"><h2>View Post</h2></a>
-  </div>
-{{/each}}
+<h2 id="pastPosts">Your Past Posts</h2>
+<section class="allPosts">
+  {{#each myposts as |post|}}
+    <div class="col-lg-3 col-sm-6 posts">
+      <h3 id="posttitle">{{post.title}}</h3>
+      <h3 id="postcontent">{{post.content}}</h3>
+      <h4 id="content">{{format_date post.date}}</h4>
+      <a href="/post/{{post.id}}"><h2>View Post</h2></a>
+    </div>
+  {{/each}}
+</section>
 
 <script src="/js/createPost.js"></script>

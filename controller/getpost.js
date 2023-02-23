@@ -30,11 +30,18 @@ router.get("/:id", withAuth, async (req, res) => {
     const posts = postData.get({ plain: true });
     console.log(posts);
 
+    const Match = posts.user_id === req.session.user_id;
+    console.log(Match);
+    console.log(posts.user_id);
+    console.log(req.session.user_id);
+
     res.render("onePost", {
       posts,
+      Match,
       username: req.session.user,
       userId: req.session.user_id,
       comments,
+      loggedIn: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -57,6 +64,7 @@ router.get("/update/:id", withAuth, async (req, res) => {
     const post = postData.get({ plain: true });
 
     res.render("updatePost", {
+      loggedIn: req.session.logged_in,
       post,
     });
   } catch (err) {
