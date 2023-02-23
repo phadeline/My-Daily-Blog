@@ -4,11 +4,8 @@
 
 ## Description
 
-<<<<<<< HEAD
 This blog is a fullstack app that fully uses REST APIs in combination with CRUD (create, read, update, delete) operations. User authentication is applied in order to log in to the app. Once logged in, you can view posts, delete and update your own posts or add a comment to someone else's post. In addition, the MVC file structure is also implented as seen in the Repo.
-=======
-This blog is a fullstack app that fully uses REST APIs in combination with CRUD (create, read, update, delete) operations. MySQL and Object Relational Mapping tool, sequelize, used to create databases. User authentication is applied in order to log in to the app. Once logged in, you can view posts, delete and update your own posts or add a comment to someone else's post. In addition, the MVC file structure is also implented as seen in the Repo. 
->>>>>>> 2e4152471978e73f3e6eb64b500e54f59bc95c56
+
 
 ## Table of Contents
 
