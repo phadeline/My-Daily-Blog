@@ -16,7 +16,7 @@ router.get("/", withAuth, async (req, res) => {
       loggedIn: req.session.logged_in,
     });
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json({ message: "dashboard route not working" });
   }
 });
 
