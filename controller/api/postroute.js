@@ -51,7 +51,7 @@ router.put("/:id", withAuth, async (req, res) => {
 
     res.status(200).json(postData);
   } catch (err) {
-    console.log("not working");
+    console.log("it is not working");
     res.status(500).json(err);
     return;
   }
